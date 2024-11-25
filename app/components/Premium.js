@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 
 const Premium = () => {
-  // State for adjusting image positions
   const [positions, setPositions] = useState({
     topLeft: { top: '4%', left: '6%' },
     topRight: { top: '4%', right: '6%' },
@@ -23,10 +22,9 @@ const Premium = () => {
   };
 
   return (
-    <div className="bg-[#EDF7FF] relative flex items-center justify-center w-full h-auto overflow-hidden lg:w-full lg:h-[636px]">
+    <div className="bg-[#EDF7FF] relative flex items-center justify-center w-full min-h-screen lg:min-h-[636px] overflow-hidden">
       <div className="flex flex-col lg:flex-row items-center w-full h-full max-w-screen-xl mx-auto space-y-10 lg:space-y-0 lg:space-x-16 px-4 md:px-8 lg:px-0 relative">
         
-        {/* Center Image - OBJECTS.png */}
         <div 
           className="relative flex justify-center lg:justify-end w-full lg:w-auto max-w-full"
           style={{
@@ -41,7 +39,7 @@ const Premium = () => {
             alt="Clock Illustration" 
             className="w-48 h-64 md:w-72 md:h-96 lg:w-[340px] lg:h-[534.51px] object-contain"
           />
-
+          
           {/* Additional Images Around OBJECTS.png */}
           <img 
             src="/bulb.png" 
@@ -106,19 +104,16 @@ const Premium = () => {
           />
         </div>
 
-        {/* Right Section - Larger Text and Icons */}
         <div 
           className="flex flex-col items-start space-y-8 lg:pl-10 w-full lg:w-auto max-w-full"
           style={{
             flex: '1 1 0%',
           }}
         >
-          {/* Title */}
           <h1 className="text-2xl md:text-3xl lg:text-5xl font-bold text-[#0F283C] leading-tight lg:leading-snug text-center lg:text-left">
             Premium <span className="text-[#146DB2]">Learning</span> <br className="hidden lg:block" /> Experience
           </h1>
 
-          {/* Feature 1 */}
           <div className="flex items-start space-x-4 p-4 rounded-lg w-full">
             <div className="bg-[#192642] p-3 rounded-lg flex items-center justify-center w-12 h-12 md:w-16 md:h-16">
               <img src="/hearts 1.png" alt="Easily Accessible Icon" className="w-6 h-6 md:w-8 md:h-8" />
@@ -131,7 +126,6 @@ const Premium = () => {
             </div>
           </div>
 
-          {/* Feature 2 */}
           <div className="flex items-start space-x-4 p-4 rounded-lg w-full">
             <div className="bg-[#192642] p-3 rounded-lg flex items-center justify-center w-12 h-12 md:w-16 md:h-16">
               <img src="/jigsaw 1.png" alt="Fun Learning Experience Icon" className="w-6 h-6 md:w-8 md:h-8" />
@@ -156,6 +150,12 @@ const Premium = () => {
           .custom-size {
             width: 60px;
             height: 61px;
+          }
+        }
+
+        @media (max-width: 1024px) {
+          .lg\\:min-h-[636px] {
+            min-height: auto;
           }
         }
       `}</style>
